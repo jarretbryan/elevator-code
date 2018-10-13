@@ -16,7 +16,11 @@ bot.on('messageCreate', (msg) => {                     // When a message is crea
     } 
   
     if(elevatorWords.some(el => msg.content.includes(el)) &&  !msg.content.startsWith('Elevator Bot say')) {        
-        bot.createMessage(msg.channel.id, "Elevator Code: 12105"); 
+      bot.createMessage(msg.channel.id, "Elevator Code: 12105"); 
+    }
+ 
+    if (msg.content.includes('12105')){
+      bot.createMessage(msg.channel.id, "Did you press the button for the second floor?")
     }
 });
 
