@@ -11,11 +11,11 @@ bot.on('ready', () => {                                // When the bot is ready
 bot.on('messageCreate', (msg) => {                     // When a message is created
     if (msg.author.bot) return;
     
-    if (msg.content.startsWith('Elevator Bot say')){
+    if (msg.content.toLowerCase().startsWith('elevator bot say')){
       bot.createMessage(msg.channel.id, msg.content.slice(17) + '!!'); 
     } 
   
-    if(elevatorWords.some(el => msg.content.toLowerCase().includes(el)) &&  !msg.content.startsWith('Elevator Bot say')) {        
+    if(elevatorWords.some(el => msg.content.toLowerCase().includes(el)) &&  !msg.content.toLowerCase().startsWith('elevator bot say')) {        
         bot.createMessage(msg.channel.id, "Elevator Code: 12105"); 
     }
   
